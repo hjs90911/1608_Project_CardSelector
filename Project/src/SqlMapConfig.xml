@@ -21,6 +21,7 @@
 
 	<mappers>
 		<mapper resource="review.xml" />
+		<mapper resource="card.xml" />
 	</mappers>
 
 </configuration>
