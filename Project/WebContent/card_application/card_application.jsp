@@ -82,7 +82,7 @@
 				</tr>
 				<tr>
 					<td colspan="2" align=center><input type="submit" value="신청">&nbsp;&nbsp; <input
-						type=button value="취소" onClick="history.go(-1)">
+						type=button value="취소" onClick="window.close();">
 				</tr>
 			</table>
 		</center>
