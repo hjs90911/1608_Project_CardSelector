@@ -29,6 +29,6 @@
 <input type="button" value="카드신청하기" id="apply">
 <input type="button" value="전체 카드 목록" id="cardlistall">
 <h2 style="color: #FFD700;">★☆☆</h2>
-	
+	test
 </body>
 </html>
