@@ -10,6 +10,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>신용카드 전체 목록</title>
 </head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#apply").click(function() {
+			window.open("../card_application/card_application.jsp","","width=400, height=400");
+		});
+	});
+</script>
 <body>
 <table align=center width=600 border="1" cellpadding="0" cellspacing="0">
 <%
@@ -40,7 +48,23 @@
 		</td>		
 	</tr>
 	
+<%
+	String r = "review";
+	int i = 0;
+%>
+	
 <c:forEach var="c" items="${cardlist}">	
+	
+	<% i = i+1; %>
+	
+	<script>
+		$(function() {
+			$(<%=r + i %>).click(function() {
+				window.open("/Project/ReviewList.re?card_num=<%=i %>", "popup_review", "width=700, height=500, scrollbars=yes");
+			});
+		});
+	</script>
+	
 	
 	<tr align="center" valign="middle" bordercolor="#333333"
 		onmouseover="this.style.backgroundColor='F8F8F8'"
@@ -68,7 +92,7 @@
 	        </div>	
 	    </td> 
 	    <td style="font-family:Tahoma;font-size:8pt;">  		
-			<div align="center"><button type="button" onclick="location.href=cardreview.bo?card_num">리   뷰</button>	
+			<div align="center"><input type="button" id=<%=r + i %> value="리   뷰">	
             </div>			
 	    </td>				
 	</tr>

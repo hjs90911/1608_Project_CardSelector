@@ -14,11 +14,22 @@
 
 //	int number = listcount-(nowpage-1)*10;
 %>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<title>선택된 신용카드 목록</title>
 </head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#review").click(function() {
+			window.open("/Project/ReviewList.re?card_num=1", "popup_review", "width=700, height=500, scrollbars=yes");
+		});
+		$("#apply").click(function() {
+			window.open("../card_application/card_application.jsp","","width=400, height=400");
+		});
+	});
+</script>
 
 <body>
 <!-- 게시판 리스트 -->
@@ -75,11 +86,11 @@
 		</td>
 		
 		<td style="font-family:Tahoma;font-size:8pt;">			
-			<div align="center"><button type="button" onclick="location.href=cardreview.bo?card_num">가입 신청</button>	
+			<div align="center"><button type="button" onclick="location.href=cardreview.bo?${c.card_num}">가입 신청</button>	
 	        </div>	
 	    </td> 
 	    <td style="font-family:Tahoma;font-size:8pt;">  		
-			<div align="center"><button type="button" onclick="location.href=cardreview.bo?card_num">리   뷰</button>	
+			<div align="center"><input type="button" id="review" value="리   뷰">
             </div>			
 	    </td>				
 	</tr>
