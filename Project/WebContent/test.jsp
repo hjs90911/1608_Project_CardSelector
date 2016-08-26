@@ -15,7 +15,7 @@
 			window.open("/Project/ReviewList.re?card_num=1", "popup_review", "width=700, height=500, scrollbars=yes");
 		});
 		$("#apply").click(function(){
-			window.open("/card_application/card_application.jsp","","width=400, height=400");
+			window.open("card_application/card_application.jsp","","width=400, height=400");
 		});
 		$("#cardlistall").click(function() {
 			location.href="/Project/CardAllAction.bo";
@@ -29,6 +29,5 @@
 <input type="button" value="카드신청하기" id="apply">
 <input type="button" value="전체 카드 목록" id="cardlistall">
 <h2 style="color: #FFD700;">★☆☆</h2>
-	test
 </body>
 </html>

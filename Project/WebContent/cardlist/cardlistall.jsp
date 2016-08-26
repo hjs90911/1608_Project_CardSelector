@@ -11,13 +11,7 @@
 <title>신용카드 전체 목록</title>
 </head>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<script>
-	$(document).ready(function() {
-		$("#apply").click(function() {
-			window.open("../card_application/card_application.jsp","","width=400, height=400");
-		});
-	});
-</script>
+
 <body>
 <table align=center width=600 border="1" cellpadding="0" cellspacing="0">
 <%
@@ -50,6 +44,7 @@
 	
 <%
 	String r = "review";
+	String a = "apply";
 	int i = 0;
 %>
 	
@@ -59,13 +54,15 @@
 	
 	<script>
 		$(function() {
+			$(<%=a + i %>).click(function() {
+				window.open("card_application/card_application.jsp?card_num=<%=i %>", "popup_apply", "width=400, height=400");
+			});
 			$(<%=r + i %>).click(function() {
 				window.open("/Project/ReviewList.re?card_num=<%=i %>", "popup_review", "width=700, height=500, scrollbars=yes");
 			});
 		});
 	</script>
-	
-	
+		
 	<tr align="center" valign="middle" bordercolor="#333333"
 		onmouseover="this.style.backgroundColor='F8F8F8'"
 		onmouseout="this.style.backgroundColor=''">
@@ -88,7 +85,7 @@
 		</td>
 		
 		<td style="font-family:Tahoma;font-size:8pt;">			
-			<div align="center"><button type="button" onclick="location.href=cardreview.bo?card_num">가입 신청</button>	
+			<div align="center"><input type="button" id=<%=a + i %> value="카드 신청" >	
 	        </div>	
 	    </td> 
 	    <td style="font-family:Tahoma;font-size:8pt;">  		
