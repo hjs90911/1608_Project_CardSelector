@@ -343,7 +343,7 @@
 	</tr>
 	<tr align="right">
 		<td colspan="5">
-	   		<a href="/Project/CardAddAction.bo?card_ad=osv">[글쓰기]</a>
+	   		<a href="/Project/CardAllAction.bo?card_ad=osv">[글쓰기]</a>
 		</td>
 	</tr>
 </table>

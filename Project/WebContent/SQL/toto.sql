@@ -3,17 +3,13 @@ CREATE TABLE CARD(
 	CARD_CONTENT VARCHAR2(20),
 	CARD_AD VARCHAR2(300),
   CARD_IMAGE VARCHAR2(20),
+  CARD_NAME VARCHAR2(300),
   PRIMARY KEY(CARD_NUM)
 );
 
-alter table CARD add(CARD_NAME VARCHAR2(300));
-alter table CARD1 drop(CARD_CONTENT);
-
-alter table card1 modify(card_name varchar(100));
-alter table card modify(card_name varchar(300));
+ALTER TABLE CARD DROP COLUMN CARD_CONTENT;
 
 SELECT * FROM CARD;
-DROP TABLE CARD;
 
 SELECT * FROM tab;
 insert into	CARD(CARD_NUM,CARD_AD,CARD_IMAGE,CARD_NAME)
@@ -48,4 +44,3 @@ insert into	CARD(CARD_NUM,CARD_AD,CARD_IMAGE,CARD_NAME)
 insert into	CARD(CARD_NUM,CARD_AD,CARD_IMAGE,CARD_NAME)
 		 values(14,'stv','citipri.GIF','씨티 프리미어마일 카드(아시아나항공)/PP카드 무료제공/온라인 신청시 첫해연회비 10%할인');       
      
-    

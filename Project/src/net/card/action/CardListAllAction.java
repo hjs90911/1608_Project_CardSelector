@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import net.card.db.CardDAOImpl;
 
- public class CardList2Action implements Action {
+ public class CardListAllAction implements Action {
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 
 		CardDAOImpl carddao=new CardDAOImpl();
