@@ -26,14 +26,14 @@ public class CardDAOImpl {
 		return session;
 	}	
 		
-	/* ì¹´ë“œ ì„ íƒ */
+	/* ì¹´ë“œ ?„ ?ƒ */
 	public List<CardBean> getCardList(Map m) throws SQLException {
 		SqlSession session=null;
 		session = getSession();
 		List<CardBean>  list = session.selectList("card.card_list", m);
 	    return list;
 	}	
-	/* ì¹´ë“œ ì „ì²´ ì„ íƒ */
+	/* ì¹´ë“œ ? „ì²? ?„ ?ƒ */
 	public List<CardBean> getCardList_all(Map m) throws SQLException {
 		SqlSession session=null;
 		session = getSession();

@@ -21,7 +21,7 @@ import net.card.db.CardDAOImpl;
 		
 		Map m = new HashMap();
 		m.put("card_ad", card_ad);
-		cardlist = carddao.getCardList(m); // ì—ëŸ¬ ë°œìƒ
+		cardlist = carddao.getCardList(m); // ?—?Ÿ¬ ë°œìƒ
 		
 		request.setAttribute("cardlist", cardlist);
 		

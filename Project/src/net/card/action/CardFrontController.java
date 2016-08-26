@@ -23,7 +23,7 @@ public class CardFrontController extends javax.servlet.http.HttpServlet
 		System.out.println("contextPath=" + contextPath);
 		System.out.println("command=" + command);
 
-		if (command.equals("/CardAddAction.bo")) {// ì¹´ë“œ ì„ íƒ í¼ì—ì„œ ë°›ëŠ” ë¶€ë¶„
+		if (command.equals("/CardAddAction.bo")) {// ì¹´ë“œ ?„ ?ƒ ?¼?—?„œ ë°›ëŠ” ë¶?ë¶?
 			action = new CardListAction();// ëª¨ë¸
 			
 			try {
@@ -33,7 +33,7 @@ public class CardFrontController extends javax.servlet.http.HttpServlet
 			}
 		} 
 		
-		else if (command.equals("/CardAllAction.bo")) {// ì¹´ë“œ ì „ì²´ í¼ì—ì„œ ë°›ëŠ” ë¶€ë¶„
+		else if (command.equals("/CardAllAction.bo")) {// ì¹´ë“œ ? „ì²? ?¼?—?„œ ë°›ëŠ” ë¶?ë¶?
 			action = new CardList2Action();// ëª¨ë¸
 			try {
 				forward = action.execute(request, response);
@@ -45,7 +45,7 @@ public class CardFrontController extends javax.servlet.http.HttpServlet
 		if (forward != null) {
 			if (forward.getRedirect()) { // true
 				response.sendRedirect(forward.getPath());
-			} else { // false ê°’ì „ë‹¬ì´ ê°€ëŠ¥í•¨
+			} else { // false ê°’ì „?‹¬?´ ê°??Š¥?•¨
 				RequestDispatcher dispatcher = request
 						.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
