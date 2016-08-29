@@ -54,15 +54,29 @@
 			<div align="center">리 뷰</div>
 		</td>
 	</tr>
-	
-	<%//int number = listcount-(nowpage-1)*10;
-//		for(int i=0;i<boardList.size();i++){
-//			BoardBean bl=(BoardBean)boardList.get(i);
-	%>	 
 	 
-	<!-- 화면 출력 번호 -->		
+	<!-- 화면 출력 번호 -->
+	
+<%
+	String r = "review";
+	String a = "apply";
+	int i = 0;
+%>
 			
 	<c:forEach var="c" items="${cardlist}">	
+	
+	<% i = i+1; %>
+	
+	<script>
+		$(function() {
+			$(<%=a + i %>).click(function() {
+				window.open("card_application/card_application.jsp?card_num=<%=i %>", "popup_apply", "width=400, height=400");
+			});
+			$(<%=r + i %>).click(function() {
+				window.open("/Project/ReviewList.re?card_num=<%=i %>", "popup_review", "width=700, height=500, scrollbars=yes");
+			});
+		});
+	</script>
 	
 	<tr align="center" valign="middle" bordercolor="#333333"
 		onmouseover="this.style.backgroundColor='F8F8F8'"
@@ -86,12 +100,12 @@
 		</td>
 		
 		<td style="font-family:Tahoma;font-size:8pt;">			
-			<div align="center"><button type="button" onclick="location.href=cardreview.bo?${c.card_num}">가입 신청</button>	
+			<div align="center"><input type="button" id=<%=a + i %> value="카드 신청" >	
 	        </div>	
 	    </td> 
 	    <td style="font-family:Tahoma;font-size:8pt;">  		
-			<div align="center"><input type="button" id="review" value="리   뷰">
-            </div>			
+			<div align="center"><input type="button" id=<%=r + i %> value="리   뷰">	
+            </div>		
 	    </td>				
 	</tr>
 	
