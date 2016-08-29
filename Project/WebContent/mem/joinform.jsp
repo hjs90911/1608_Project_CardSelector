@@ -32,7 +32,7 @@
 						alert("ID 입력해주세요");
 						$("#Mem_ID").focus();
 					} else {
-						var ref = "/SsgSsg/idCheck.me?Mem_ID="
+						var ref = "/Project/idCheck.me?Mem_ID="
 								+ $("#Mem_ID").val();
 						window.open(ref, "idcheck", "width=300, height=250");
 					}
@@ -202,7 +202,7 @@
 	
 	$(function() {
 		$("#button").click(function() {
-			location.href = "/SsgSsg/mem/Joinform.jsp"
+			location.href = "/Project/mem/Joinform.jsp"
 		})
 	})
 	$(function() {
@@ -238,7 +238,7 @@ td {
 
 
 <body>
-	<form name="joinform" action="/SsgSsg/MemberJoinAction.me" method="post">
+	<form name="joinform" action="/Project/MemberJoinAction.me" method="post">
 		<table border="0" cellpadding="0" cellspacing="0">
 			<div id="join_main">
 				<tr>
