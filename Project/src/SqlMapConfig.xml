@@ -6,6 +6,7 @@
 	<typeAliases>
 		<typeAlias type="net.review.db.ReviewBean" alias="review" />
 		<typeAlias type="net.card.db.CardBean" alias="card" />
+		<typeAlias type="net.mem.db.Memberbean" alias="Member" />
 	</typeAliases>
 
 	<environments default="development">
@@ -23,6 +24,7 @@
 	<mappers>
 		<mapper resource="review.xml" />
 		<mapper resource="card.xml" />
+		<mapper resource="Member.xml" />
 	</mappers>
 
 </configuration>
