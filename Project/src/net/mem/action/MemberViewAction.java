@@ -19,17 +19,17 @@ public class MemberViewAction implements Action{
 			MemberDao memberdao=new MemberDao();
 	   		Memberbean member=new Memberbean();	   		
 	   		
-//	   		String id=(String)session.getAttribute("Mem_ID");
-	   		String id="a";
-	   		
+	   		String id=(String)session.getAttribute("id");
+//	   		String id="a";
+	 
 //	   		if(id==null){
 //				forward.setRedirect(true);
 //				forward.setPath("./MemberLogin.me");
 //				return forward;
 //	   		}
+	   		
 	   		member=memberdao.select(id);
 
-	   		
 	   		if(member==null){
 	   			System.out.println("회원 정보 보기 실패");
 		   		return null;

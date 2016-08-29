@@ -8,8 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.mem.action.ActionForward;
-
 @WebServlet("*.me")
 public class MemFrontController extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {
 	static final long serialVersionUID = 1L;
@@ -24,7 +22,7 @@ public class MemFrontController extends javax.servlet.http.HttpServlet implement
 		Action action = null;
 
 		System.out.println("RequestURI=" + RequestURI);
-		System.out.println("contextPath=" + contextPath);
+
 		System.out.println("command=" + command);
 
 		if (command.equals("/MemberJoinAction.me")) {
@@ -52,10 +50,10 @@ public class MemFrontController extends javax.servlet.http.HttpServlet implement
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/MemberLogin.me")) {
+		} else if (command.equals("/MemberDelete.me")) {
 			forward = new ActionForward();
 			forward.setRedirect(false);
-			forward.setPath("./mem/loginForm.jsp");
+			forward.setPath("./mem/delete.jsp");
 		} else if (command.equals("/MemberDeleteAction.me")) {
 			action = new MemberDeleteAction();
 			try {
@@ -73,7 +71,6 @@ public class MemFrontController extends javax.servlet.http.HttpServlet implement
 			}
 		}
 
-		
 		if (forward != null) {
 			if (forward.getRedirect()) {
 				response.sendRedirect(forward.getPath());
@@ -92,6 +89,7 @@ public class MemFrontController extends javax.servlet.http.HttpServlet implement
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("post");
 		doProcess(request, response);
 	}
 }

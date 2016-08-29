@@ -20,7 +20,7 @@ public class MemberLoginAction implements Action{
 	   		Memberbean member=new Memberbean();
 	   		
 	   		member.setMem_id(request.getParameter("Mem_ID"));
-	   		
+	   		member.setMem_pw(request.getParameter("Mem_PW"));
 	   		result=memberdao.chk(member);
 	   		
 	   		if(result==0){ //ID:일치  비밀번호:불일치
@@ -43,7 +43,8 @@ public class MemberLoginAction implements Action{
 		   		return null;
 		   	}
 	   		//로그인 성공
-	   	
+	   		
+	   		//로그인 후 값을 공유함.
 	   		session.setAttribute("id", member.getMem_id());
 	   		
 	   		forward.setRedirect(true);

@@ -14,23 +14,13 @@
 <body>
 	<script>
 		$(function() {
-			$("#update").click(function() {
-				if ($("#MEM_ID").val() == "") {
-					alert("ID를 입력해주세요");
-					$("#MEM_ID").focus();
-					return false;
-				}
-			});
-			$("#delete").click(function() {
-				location.href = "MemberDeleteAction.me" 
-			});
-
 			$("#reset").click(function() {
-				location.href = "main.jsp"
+				location.href = "./main.me"
 			});
 		})
 	</script>
-<form method="post" action="/SsgSsg/MemberDeleteAction.me">
+<form method="post" action="/SsgSsg/MemberDelete.me">
+	<%-- <input type=hidden name="Mem_ID" value="${member.getMem_id()}"> --%>
 	<center>
 		<h1>회원 정보 보기</h1>
 		<table border=1 width=300>
@@ -38,12 +28,6 @@
 				<td colspan=1>아이디 :</td>
 				<td colspan=2>
 					<%--member.getMEMBER_ID() --%> ${member.getMem_id()}
-				</td>
-			</tr>
-			<tr align=center>
-				<td colspan=1>비밀번호 :</td>
-				<td colspan=2>
-					<%--member.getMEMBER_PW() --%> ${member.getMem_pw()}
 				</td>
 			</tr>
 			<tr align=center>
@@ -97,10 +81,9 @@
 			</tr>
 
 			<tr align=center>
-				<td colspan=1><input type="button" value="수정하기" name="update"
-					id="update"></a></td>
-				<td colspan=1><input type="submit" value="삭제하기" name="delete"
-					id="delete" onclick=""></a></td>
+				<td colspan=1><input type="hidden"></a></td>
+				<td colspan=1><input type="submit" value="탈퇴하기" name="delete"
+					id="delete"></a></td>
 				<td colspan=1><input type="button" value="돌아가기" name="reset"
 					id="reset"></a></td>
 			</tr>
