@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Member">
+	<!-- <resultMap type="Member" id="ResultMap"> <result property="id" column="id" 
+		/> <result property="password" column="password" /> </resultMap> -->
+	<!-- 추가 부분 -->
+	<insert id="insert" parameterType="Member">
+		insert into
+		ssg01(Mem_ID,
+		Mem_PW, Mem_NAME, Mem_GENDER, Mem_JUMIN1,
+		Mem_JUMIN2, Mem_PHONE1,
+		Mem_PHONE2, Mem_PHONE3, Mem_HOBBY, Mem_BANK,
+		Mem_CARD, Mem_DONG,
+		Mem_DATE) values
+		(#{mem_id}, #{mem_pw}, #{mem_name}, #{mem_gender},
+		#{mem_jumin1},
+		#{mem_jumin2}, #{mem_phone1}, #{mem_phone2}, #{mem_phone3}
+		, #{mem_hobby}, #{mem_bank}, #{mem_card}, #{mem_dong}, sysdate)
+	</insert>
+	<!-- 검색 부분 -->
+	<select id="select" parameterType="String" resultType="Member">
+		select *
+		from ssg01 where Mem_ID = #{mem_id}
+	</select>
+	<!-- 리스트부분 -->
+	<select id="list" resultType="Member">
+		select * from ssg01
+	</select>
+	<!-- 수정 부분 -->
+	<update id="update" parameterType="Member">
+		update ssg01 set Mem_PW =
+		#{mem_pw} where Mem_ID = #{mem_id}
+	</update>
+	<!-- 삭제 부분 -->
+	<delete id="delete" parameterType="String">
+		delete from ssg01 where Mem_ID
+		= #{mem_id}
+	</delete>
+</mapper>
