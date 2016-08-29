@@ -202,7 +202,7 @@
 	
 	$(function() {
 		$("#button").click(function() {
-			location.href = "/Project/mem/Joinform.jsp"
+			location.href = "/Project/mem/joinform.jsp"
 		})
 	})
 	$(function() {

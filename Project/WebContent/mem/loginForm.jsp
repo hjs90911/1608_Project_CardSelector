@@ -36,7 +36,7 @@
 		      }
 	});
 		   $("#join").click(function(){
-				location.href="Joinform.jsp"		   
+				location.href="joinform.jsp"		   
 		   });
 	})
 </script>
