@@ -18,7 +18,7 @@ public class MemberDao {
 		SqlSession session=null;
 		Reader reader=null;
 		try {
-			reader = Resources.getResourceAsReader("sqlMapConfig.xml");
+			reader = Resources.getResourceAsReader("SqlMapConfig.xml");
 			SqlSessionFactory sf = new SqlSessionFactoryBuilder().build(reader);
 			session = sf.openSession(true);
 		} catch (IOException e) {
