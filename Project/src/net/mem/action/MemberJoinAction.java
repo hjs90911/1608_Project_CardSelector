@@ -2,6 +2,7 @@ package net.mem.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import net.mem.action.ActionForward;
 import net.mem.db.Memberbean;
@@ -14,7 +15,7 @@ public class MemberJoinAction implements Action{
 		 	System.out.println("들어옴2");
 		 	
 		 	ActionForward forward = new ActionForward();
-		 	
+		 	HttpSession session=request.getSession();
 			MemberDao memberdao=new MemberDao();
 	   		Memberbean member=new Memberbean();
 	   		
@@ -57,6 +58,7 @@ public class MemberJoinAction implements Action{
 		   		return null;
 		   	}
 	   		
+	   		session.setAttribute("id", member.getMem_id());
 	   		//회원가입 성공.
 	   		forward.setRedirect(true);
 	   		forward.setPath("./main.me");
