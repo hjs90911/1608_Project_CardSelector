@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import="java.util.*"%>
+<%@include file="../include/header.jsp"%>	
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="net.card.db.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -9,10 +10,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>신용카드 전체 목록</title>
+<style type="text/css">
+#top2 {width:1200px;}
+address{font:bold normal 100% "NGothic",Arial; padding:10px;
+		color:#eee;text-align:center;}
+#footer{position:fixed; bottom:0; width:100%; height:30px; background-color:#123456; clear:both;}
+</style>
 </head>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
+<center>
 <body>
+<div id="top2">
 <table align=center width=600 border="1" cellpadding="0" cellspacing="0">
 <%
 //if(listcount > 0){
@@ -96,7 +105,14 @@
 	
 	</c:forEach>
 	
-</table>
-
+</table><br><br><br><br><br><br><br><br><br>
+</center>
+<div id="footer">
+			<address>
+				손창호/김병수/정재홍/김진수의 맞춤형 카드 서비스
+			</address>
+		</div>
+</div>
 </body>
+
 </html>

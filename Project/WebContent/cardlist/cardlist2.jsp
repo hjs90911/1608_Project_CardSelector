@@ -1,18 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@include file="../include/header.jsp"%>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>신용카드 목록</title>
+<style>
+#top2 {width:1200px;}
+address{font:bold normal 100% "NGothic",Arial; padding:10px;
+		color:#eee;text-align:center;}
+#footer{position:fixed; bottom:0; width:100%; height:30px; background-color:#123456; clear:both;}
+</style>
 </head>
+<center>
 <body>
-	<table align=center width=600 border="1" cellpadding="0" cellspacing="0">
+<div id="top2">
+	<br><table width=600 border="1" cellpadding="0" cellspacing="0">
 		<%
 			//if(listcount > 0){
 		%>
 
 		<!-- 레코드가 있으면 -->
-
+		
 		<tr align="center" valign="middle">
 			<td colspan="5">신용카드 목록</td>
 		</tr>
@@ -419,6 +428,14 @@
 			<td colspan="5"><a href="/Project/CardAllAction.bo?card_ad=osv">[글쓰기]</a></td>
 		</tr>
 	</table>
-
+	</center>
+			<br><br><br>
+	<div id="footer">
+			<address>
+				손창호/김병수/정재홍/김진수의 맞춤형 카드 서비스
+			</address>
+		</div>
+</div>
 </body>
+
 </html>

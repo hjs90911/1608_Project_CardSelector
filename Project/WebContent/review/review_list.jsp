@@ -1,7 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ page import="net.review.db.*"%>
+<%@include file="../include/header.jsp"%>	
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,7 +17,10 @@
 	text-decoration: none;
 	color: #FFD700
 }
-
+#top2{width:1200px;}
+address{font:bold normal 100% "NGothic",Arial; padding:10px;
+		color:#eee;text-align:center;}
+#footer{position:fixed; bottom:0; width:100%; height:30px; background-color:#123456; clear:both;}
 .star_rating a {
 	
 }
@@ -47,8 +51,9 @@
 	});
 </script>
 </head>
-
+<center>
 <body>
+<div id="top2">
 	<h1 align="center">리뷰</h1>
 	<!-- 게시판 리스트 -->
 	<form method="post" action="/Project/ReviewWrite.re">
@@ -161,7 +166,14 @@
 			//	}
 		%>
 
-	</table>
-
+	</table><br><br><br><br><br><br>
+	</center>
+<div id="footer">
+			<address>
+				손창호/김병수/정재홍/김진수의 맞춤형 카드 서비스
+			</address>
+		</div>
+		</div>
 </body>
+
 </html>

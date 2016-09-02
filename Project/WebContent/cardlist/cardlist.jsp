@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import="java.util.*"%>
+<%@include file="../include/header.jsp"%>	
+
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="net.card.db.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -14,10 +16,15 @@
 
 //	int number = listcount-(nowpage-1)*10;
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<title>선택된 신용카드 목록</title>
+	<style>
+	#top2 {width:1200px;}
+address{font:bold normal 100% "NGothic",Arial; padding:10px;
+		color:#eee;text-align:center;}
+#footer{position:fixed; bottom:0; width:100%; height:30px; background-color:#123456; clear:both;}
+	</style>
 </head>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
@@ -31,10 +38,11 @@
 	});
 </script>
 
+<center>
 <body>
 <!-- 게시판 리스트 -->
-
-<table align=center width=600 border="1" cellpadding="0" cellspacing="0">
+<div id="top2">
+<br><table width=600 border="1" cellpadding="0" cellspacing="0">
 
 	
 	<tr align="center" valign="middle" bordercolor="#333333">
@@ -99,10 +107,14 @@
                </c:forTokens>
 		</td>
 		
-		<td style="font-family:Tahoma;font-size:8pt;">			
+		
+		<td style="font-family:Tahoma;font-size:8pt;">
+			<c:if test="${sessionScope.id != null}">			
 			<div align="center"><input type="button" id=<%=a + i %> value="카드 신청" >	
-	        </div>	
-	    </td> 
+	        </div>
+	        </c:if> 
+	    </td>
+	    
 	    <td style="font-family:Tahoma;font-size:8pt;">  		
 			<div align="center"><input type="button" id=<%=r + i %> value="리   뷰">	
             </div>		
@@ -111,7 +123,14 @@
 	
 	</c:forEach>
 	
-</table>
-
+</table><br><br><br><br><br><br><br><br><br>
+</center>
+<div id="footer">
+			<address>
+				손창호/김병수/정재홍/김진수의 맞춤형 카드 서비스
+			</address>
+		</div>
+		</div>
 </body>
+
 </html>

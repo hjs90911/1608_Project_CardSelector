@@ -12,12 +12,8 @@ CREATE TABLE REVIEW(
 	PRIMARY KEY(REVIEW_NUM)
 );
 
-alter table review rename column MEM_ID to REVIEW_ID;
-
 create sequence review_seq
 start with 1
 increment by 1
 nocache;
-
-alter table REVIEW add constraint foreign key(REVIEW_ID) references SSG01(MEM_ID);
 

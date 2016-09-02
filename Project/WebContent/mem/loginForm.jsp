@@ -1,79 +1,75 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.text.SimpleDateFormat"%>
+<%@ page import="net.card.db.*"%>
+<%@include file="../include/header.jsp"%>	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-    <head>
-    
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <meta charset="UTF-8" />
-        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
-        <title>SSGSSG LOGIN PAGE</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
-        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
-        <meta name="author" content="Codrops" />
-        <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
-    </head>
-    <body>
-    <script>
-	$(function(){
-		$("form").submit(function(){
-		       if($("#Mem_ID").val() == ""){
-		            alert("ID를 입력해주세요");
-		            $("#MEM_ID").focus();
-		            return false;
-		       }
-		      if($("#Mem_PW").val() == ""){
-		            alert("비밀번호를 입력해주세요");
-		            $("#MEM_PW").focus();
-		            return false;
-		      }
-	});
-		   $("#join").click(function(){
-				location.href="Joinform.jsp"		   
-		   });
-	})
-</script>
-        <div class="container">
-            <!-- Codrops top bar -->
-            <div class="codrops-top">
-                <div class="clr"></div>
-            </div><!--/ Codrops top bar -->
-            <header>
-                <h1 align="left">SSGSSG LOGIN</span></h1>
-            </header>
-            <section >				
-                <div id="container_demo"  align="left">
-                    <a class="hiddenanchor" id="toregister"></a>
-                    <a class="hiddenanchor" id="tologin"></a>
-                    <div id="wrapper">
-                        <div id="login" class="animate form">
-                            <form  action="/SsgSsg/MemberLoginAction.me" autocomplete="on"> 
-                                <h1>Log in</h1> 
-                                <p> 
-                                    <label for="username" class="uname" data-icon="u" > ID </label>
-                                    <input name="Mem_ID" id="Mem_ID" required="required" type="text" placeholder="ID를 입력하시오"/>
-                                </p>
-                                <p> 
-                                    <label for="password" class="youpasswd" data-icon="p"> password </label>
-                                    <input name="Mem_PW" id="Mem_PW" required="required" type="password" placeholder="PW를 입력하시오" /> 
-                                </p>
-                                <p class="login button" align="center"> 
-                               <input type="submit" value="Login">&nbsp;&nbsp; 
-							   <input type="button" name="join" id="join" value="Join" ></td>
-								</p>
-                            </form>
-                        </div>
-                    </div>
-                </div>  
-            </section>
-        </div>
-    </body>
+<html>
+<head>
+
+<meta charset="UTF-8" />
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+<title>SSGSSG LOGIN PAGE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<style type="text/css">
+#bob{
+	top:"200px";
+	align:middle;
+}
+#top2 {width:1200px;}
+address{font:bold normal 100% "NGothic",Arial; padding:10px;
+		color:#eee;text-align:center;}
+#footer{position:fixed; bottom:0; width:100%; height:30px; background-color:#123456; clear:both;}
+</style>
+</head>
+<center>
+<body>
+	<script>
+		$(function() {
+			$("logingood").submit(function() {
+				if ($("#Mem_ID").val() == "") {
+					alert("ID를 입력해주세요");
+					$("#MEM_ID").focus();
+					return false;
+				}
+				if ($("#Mem_PW").val() == "") {
+					alert("비밀번호를 입력해주세요");
+					$("#MEM_PW").focus();
+					return false;
+				}
+			});
+			$("#join").click(function() {
+				location.href = "/Project/mem/Joinform.jsp"
+			});
+		})
+	</script>
+<div id="top2">
+	<form name="logingood" action="/Project/MemberLoginAction.me" autocomplete="on">
+			<div id="bob">
+			<br><br><br>
+				<label>아이디</label> &nbsp;
+				<label><input type="text" width="20px" name="Mem_ID" id="Mem_ID" class="form-control" value=""/></label><br>
+				<label>비밀번호 </label> 
+				<label> <input type="password" width="20px" name="Mem_PW" id="Mem_PW" class="form-control" value=""/></label>
+				<br><br><label><input type="submit" value="로그인" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" name="join" id="join" value="회원가입" class="btn btn-primary"></label> 
+	</div>
+	</form><br><br><br><br><br><br><br><br>
+	</center>
+	<div id="footer">
+			<address>
+				손창호/김병수/정재홍/김진수의 맞춤형 카드 서비스
+			</address>
+		</div>
+		</div>
+</body>
+
 </html>
 

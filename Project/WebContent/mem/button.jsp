@@ -8,5 +8,6 @@
 </head>
 <body>
 <input type="button" value="info" onClick="location.href='/SsgSsg/MemberViewAction.me'">
+<input type="button" value="info" onClick="location.href='/SsgSsg/MemberViewAction.me'">
 </body>
 </html>

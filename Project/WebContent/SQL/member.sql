@@ -10,7 +10,7 @@ CREATE TABLE ssg01(
 	Mem_PHONE3 VARCHAR2(6) not null,
 	Mem_HOBBY VARCHAR2(100) not null,
 	Mem_BANK VARCHAR2(15) not null,
-	Mem_CARD VARCHAR2(15) not null,
+	Mem_CARD VARCHAR2(150) not null,
 	Mem_DONG VARCHAR2(15) not null,
 	Mem_DATE DATE not null,
 	PRIMARY KEY(Mem_ID)
